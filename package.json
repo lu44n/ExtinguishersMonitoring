@@ -4,6 +4,7 @@
   "description": "WebApp voltado ao gerenciamento de extintores de incêndio do Metrô de São Paulo.",
   "main": "index.js",
   "scripts": {
+    "client": "cd client && npm start",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
