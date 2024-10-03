@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&display=swap');
+
+.footer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: transparent;
+    text-align: center;
+    color: #fff;
+    padding: 10px 0;
+    background-color: #0f3860;
+    font-family: 'Afacad Flux';
+}
+
+span {
+    font-weight: bold;
+    color: #195da1;
+}
