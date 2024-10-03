@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&display=swap');
-
 .footer{
     position: fixed;
     bottom: 0;
@@ -13,7 +11,7 @@
     font-family: 'Afacad Flux';
 }
 
-span {
+.footer span {
     font-weight: bold;
     color: #195da1;
 }

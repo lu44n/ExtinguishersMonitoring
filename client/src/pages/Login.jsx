@@ -8,7 +8,7 @@ export const Login = () => {
   return (
     <div className = 'container'>
         <div className="header">
-            <div className="text">Login</div>
+            <div className="text">Login | Admin</div>
             <div className="underline"></div>
         </div>
         <div className="inputs">

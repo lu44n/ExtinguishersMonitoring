@@ -1,0 +1,31 @@
+.navbar {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    background-color: #0f3860; 
+    padding: 10px 20px; 
+    color: #fff; 
+    font-family: 'Inter';
+  }
+  
+  .navbar-left {
+    font-size: 25px;
+    font-weight: bold; 
+  }
+  
+  .navbar-right ul {
+    list-style-type: none; 
+    margin: 0; 
+    padding: 0; 
+    display: flex;
+    font-size: 20px;
+  }
+  
+  .navbar-right li {
+    margin-left: 20px; 
+    cursor: pointer; 
+  }
+  
+  .navbar-right li:hover {
+    color: #cccccc;
+  }
