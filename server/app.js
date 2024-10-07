@@ -32,7 +32,7 @@ app.post("/login", async (req, res) => {
   
       const user = result.rows[0];
       if (!user || user.password !== password) {
-        return res.status(400).json({ message: "Invalid Credentials" });
+        return res.status(400).json({ message: "Usuário ou Senha Inválidos!" });
       }
   
     //   const isPasswordMatch = await bcrypt.compare(password, user.password);
