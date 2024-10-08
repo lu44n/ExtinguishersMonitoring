@@ -1,0 +1,93 @@
+.primary-div {
+    padding-top: 45px;
+    padding-bottom: 15px;
+    font-family: 'Inter';
+}
+
+.title-container {
+    display: flex;
+    justify-content: center;
+}
+
+.home-title {
+    font-size: 30px;
+    font-weight: 700;
+    color: #003366;
+}
+
+.desc-text-container {
+    display: flex;
+    flex-direction: column;
+    width: 900px;
+    margin: auto;
+    padding-top: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-subtitle {
+    text-align: center;
+    font-size: 22px;
+    font-weight: 700;
+    color: #003366;
+}
+
+.desc-text {
+    text-align: center;
+    font-size: 19px;
+    padding-top: 15px;
+}
+
+.title-boxes {
+    font-size: 23px;
+    font-weight: 700;
+    color: #003366;
+    padding-top: 25px;
+    padding-bottom: 20px;
+}
+
+.boxs-container {
+    display: flex; 
+    justify-content: space-between; 
+    width: 100%; 
+    margin: 0 auto; 
+    margin-top: 10px; 
+}
+
+.info-box {
+    flex: 1; 
+    margin: 0 10px; 
+    min-height: 250px; 
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.5); 
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.info-box:hover {
+    transform: scale(1.08);
+}
+
+.info-text {
+    font-weight: 700;
+    padding-bottom: 10px;
+}
+
+.extintor-number,
+.extintor-inspecao,
+.extintor-alerta {
+    font-size: 24px; /* Aumenta o tamanho da fonte para os números */
+    color: #333; /* Cor do texto dos números */
+    text-align: center; /* Centraliza o texto */
+}
+
+.extintor-alerta {
+    color: rgb(185, 25, 25);
+}
+
+.extintor-inspecao {
+    color: rgb(247, 165, 32);
+}
