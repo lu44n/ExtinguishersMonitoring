@@ -3,12 +3,14 @@ import { Navbar } from './components/Navbar';
 import { Home } from './pages/Home';
 import { Login } from './pages/Login';
 import { Footer } from './components/Footer';
+import { ForgotPassword } from './pages/ForgotPassword';
 
 function App() {
   return (
     <Router>
       <Routes>
         <Route path="/" element={<Login />} />
+        <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route 
           path="/home" 
           element={

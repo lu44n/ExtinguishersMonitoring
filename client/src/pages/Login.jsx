@@ -33,6 +33,10 @@ export const Login = () => {
     }
   };
 
+  const handleForgotPassword = () => {
+    navigate("/forgot-password");
+  }
+
   return (
     <div className="primary-login">
       <div className='container'>
@@ -60,7 +64,7 @@ export const Login = () => {
             />
           </div>
         </div>
-        <div className="forgot-password">Lost Password? <span>Click Here!</span></div>
+        <div className="forgot-password">Lost Password? <span onClick={handleForgotPassword}>Click Here!</span></div>
         <div className="submit-container">
           <div className="submit" onClick={handleLogin}>Submit</div> 
         </div>
