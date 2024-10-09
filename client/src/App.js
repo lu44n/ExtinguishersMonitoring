@@ -4,6 +4,8 @@ import { Home } from './pages/Home';
 import { Login } from './pages/Login';
 import { Footer } from './components/Footer';
 import { ForgotPassword } from './pages/ForgotPassword';
+import { Consulta } from './pages/Consulta';
+import { Gerenciar } from './pages/Gerenciar';
 
 function App() {
   return (
@@ -17,6 +19,26 @@ function App() {
             <>
               <Navbar />
               <Home />
+              <Footer />
+            </>
+          } 
+        />
+        <Route 
+          path="/consulta" 
+          element={
+            <>
+              <Navbar />
+              <Consulta />
+              <Footer />
+            </>
+          } 
+        />
+        <Route 
+          path="/gerenciar" 
+          element={
+            <>
+              <Navbar />
+              <Gerenciar />
               <Footer />
             </>
           } 

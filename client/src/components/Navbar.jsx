@@ -15,6 +15,14 @@ export const Navbar = () => {
     navigate("/home")
   }
 
+  const handleConsulta = () => {
+    navigate("/consulta")
+  }
+
+  const handleGerenciar = () => {
+    navigate("/gerenciar")
+  }
+
   return (
     <nav className="navbar">
       <div className="navbar-left"> 
@@ -23,8 +31,8 @@ export const Navbar = () => {
       <div className="navbar-right">
         <ul>
           <li onClick={handleHome}>Home</li>
-          <li>Consulta</li>
-          <li>Gerenciar</li>
+          <li onClick={handleConsulta}>Consulta</li>
+          <li onClick={handleGerenciar}>Gerenciar</li>
           <li onClick={handleExit}><FontAwesomeIcon icon={faRightFromBracket} /></li>
         </ul>
       </div>
