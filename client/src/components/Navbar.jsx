@@ -6,9 +6,15 @@ import '../styles/Navbar.css'
 
 export const Navbar = () => {
   const navigate = useNavigate();
+
   const handleExit = () => {
     navigate("/")
   }
+
+  const handleHome = () => {
+    navigate("/home")
+  }
+
   return (
     <nav className="navbar">
       <div className="navbar-left"> 
@@ -16,7 +22,7 @@ export const Navbar = () => {
       </div>
       <div className="navbar-right">
         <ul>
-          <li>Home</li>
+          <li onClick={handleHome}>Home</li>
           <li>Consulta</li>
           <li>Gerenciar</li>
           <li onClick={handleExit}><FontAwesomeIcon icon={faRightFromBracket} /></li>

@@ -28,4 +28,5 @@
   
   .navbar-right li:hover {
     color: #cccccc;
+    transform: scale(1.08);
   }
