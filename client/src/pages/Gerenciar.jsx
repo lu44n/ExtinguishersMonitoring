@@ -3,6 +3,10 @@ import '../styles/Gerenciar.css'
 
 export const Gerenciar = () => {
   return (
-    <div>Gerenciar</div>
+    <div className="primary-gerenciar">
+        <div className="gerenciar-title-container">
+            <div className="title-gerenciamento">Gerenciamento de Extintores | Metrô SP</div>
+        </div>
+    </div>
   )
 }
