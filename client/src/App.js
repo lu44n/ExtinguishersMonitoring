@@ -1,11 +1,10 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import { Navbar } from './components/Navbar';
 import { Home } from './pages/Home';
 import { Login } from './pages/Login';
-import { Footer } from './components/Footer';
 import { ForgotPassword } from './pages/ForgotPassword';
 import { Consulta } from './pages/Consulta';
 import { Gerenciar } from './pages/Gerenciar';
+import ProtectedRoute from './components/ProtectedRoute';
 
 function App() {
   return (
@@ -13,34 +12,25 @@ function App() {
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
-        <Route 
-          path="/home" 
-          element={
-            <>
-              <Navbar />
+        <Route path="/home" element=
+          {
+            <ProtectedRoute>
               <Home />
-              <Footer />
-            </>
+            </ProtectedRoute>
           } 
         />
-        <Route 
-          path="/consulta" 
-          element={
-            <>
-              <Navbar />
+        <Route path="/consulta" element=
+          {
+            <ProtectedRoute>
               <Consulta />
-              <Footer />
-            </>
+            </ProtectedRoute>
           } 
         />
-        <Route 
-          path="/gerenciar" 
-          element={
-            <>
-              <Navbar />
+        <Route path="/gerenciar" element=
+          {
+            <ProtectedRoute>
               <Gerenciar />
-              <Footer />
-            </>
+            </ProtectedRoute>
           } 
         />   
       </Routes>
