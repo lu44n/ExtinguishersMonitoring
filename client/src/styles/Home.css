@@ -79,9 +79,9 @@
 .extintor-number,
 .extintor-inspecao,
 .extintor-alerta {
-    font-size: 24px; /* Aumenta o tamanho da fonte para os números */
-    color: #333; /* Cor do texto dos números */
-    text-align: center; /* Centraliza o texto */
+    font-size: 24px; 
+    color: #333; 
+    text-align: center; 
 }
 
 .extintor-alerta {
