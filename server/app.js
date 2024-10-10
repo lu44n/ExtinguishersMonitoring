@@ -2,6 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const authRoutes = require("./routes/authRoutes");
 const dotenv = require("dotenv");
+const extinguisherRoutes = require("./routes/extinguisherRoutes");
 
 dotenv.config();
 
@@ -12,6 +13,7 @@ app.use(express.json());
 const port = process.env.PORT || 4000;
 
 app.use("/auth", authRoutes);
+app.use("/api", extinguisherRoutes)
 
 app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);
