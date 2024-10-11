@@ -57,7 +57,7 @@ export const Modal = ({ isOpen, onClose, data }) => {
       if (response.ok) {
         alert('Extintor atualizado com sucesso!');
         setIsEditing(false);
-        window.location.reload(); // Recarrega a página para refletir as alterações
+        window.location.reload(); 
       } else {
         alert('Erro ao atualizar o extintor.');
       }
