@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import QRCode from 'react-qr-code';
 import QRCodelink from 'qrcode';
 import '../styles/Modal.css';
@@ -6,16 +6,15 @@ import '../styles/Modal.css';
 export const Modal = ({ isOpen, onClose, data }) => {
   const [isEditing, setIsEditing] = useState(false);
   const [editData, setEditData] = useState(data);
-  const [wasEditingBeforeClose, setWasEditingBeforeClose] = useState(false); 
 
-  if (!isOpen) {
-    if (wasEditingBeforeClose) {
-      setIsEditing(false);
+  useEffect(() => {
+    if (isOpen) {
       setEditData(data); 
-      setWasEditingBeforeClose(false); 
+      setIsEditing(false); 
     }
-    return null;
-  }
+  }, [isOpen, data]); 
+
+  if (!isOpen) return null;
 
   const urlQRCode = `localhost:3000/consulta/extinguisher/${data.id}`;
   const qrcodeName = `qrcode-${data.id}.png`;
@@ -57,7 +56,7 @@ export const Modal = ({ isOpen, onClose, data }) => {
 
       if (response.ok) {
         alert('Extintor atualizado com sucesso!');
-        setIsEditing(false); 
+        setIsEditing(false);
         window.location.reload(); // Recarrega a página para refletir as alterações
       } else {
         alert('Erro ao atualizar o extintor.');
@@ -128,21 +127,10 @@ export const Modal = ({ isOpen, onClose, data }) => {
           )}
         </div>
         <div className="modal-actions">
-          <button onClick={() => {
-              setIsEditing(!isEditing);
-              if (isEditing) {
-                  setEditData(data); 
-                  setWasEditingBeforeClose(true); 
-              }
-          }} className="edit-btn">
+          <button onClick={() => setIsEditing(!isEditing)} className="edit-btn">
             {isEditing ? 'Cancelar' : 'Editar'}
           </button>
-          <button onClick={() => {
-              if (isEditing) {
-                  setWasEditingBeforeClose(true);
-              }
-              onClose(); 
-          }} className="close-modal-bttn">Fechar</button>
+          <button onClick={onClose} className="close-modal-bttn">Fechar</button>
         </div>
       </div>
     </div>
