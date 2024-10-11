@@ -45,6 +45,12 @@
     font-size: 19px;
     font-weight: 700;   
     cursor: pointer;
+    border: none;
+    transition: transform 0.1;
+}
+
+.close-modal-bttn:hover {
+    transform: scale(1.05);
 }
 
 .qr-code-container {
@@ -61,25 +67,22 @@
 }
 
 .download-btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    margin-top: 8px;
-    margin-bottom: 8px;
-    width: 160px;
-    height: 45px;
-    color: #fff;
-    background-color: #918f8f;
-    border-radius: 20px;
-    font-size: 14px;
+    flex: 1;
+    margin-top: 15px;
+    background-color: #6c757d; 
+    color: #ffffff;
     border: none;
-    font-weight: 510;
+    padding: 12px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s, transform 0.1s;
 }
 
 .download-btn:hover {
-    background: #EAEAEA;
-    color: #676767;
+    background: #5a6268;
+    color: #fff;
+    transform: scale(1.05);
 }
 
 .edit-area {
@@ -94,19 +97,20 @@
     align-items: center;
     cursor: pointer;
     margin-bottom: 8px;
-    width: 160px;
+    width: 140px;
     height: 45px;
     color: #fff;
-    background-color: #918f8f;
-    border-radius: 20px;
-    font-size: 14px;
+    background-color: #6c757d;
+    border-radius: 5px;
+    font-size: 1rem;
     border: none;
-    font-weight: 510;
+    font-weight: 500;
+    transition: transform 0.1;
 }
 
 .edit-btn:hover {
-    background: #EAEAEA;
-    color: #676767;
+    background-color: #5a6268;
+    transform: scale(1.05);
 }
 
 .save-area {
@@ -125,10 +129,15 @@
     height: 45px;
     color: #fff;
     background-color: #2ac427;
-    border-radius: 20px;
+    border-radius: 5px;
     font-size: 14px;
     border: none;
     font-weight: 510;
     margin-bottom: 8px;
     margin-top: 8px;
+    transition: transform 0.1;
+}
+
+.save-btn:hover {
+    transform: scale(1.05);
 }
