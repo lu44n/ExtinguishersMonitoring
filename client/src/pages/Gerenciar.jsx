@@ -3,12 +3,15 @@ import { Navbar } from '../components/Navbar';
 import { Footer } from '../components/Footer';
 import { FireExtinguisherCard } from '../components/FireExtinguisherCard';
 import DeleteModal from '../components/DeleteModal'; 
+import AddModal from '../components/AddModal';
 import '../styles/Gerenciar.css';
 
 export const Gerenciar = () => {
   const [extinguishers, setExtinguishers] = useState([]);
-  const [isModalOpen, setIsModalOpen] = useState(false); 
+  const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false); 
+  const [isAddModalOpen, setIsAddModalOpen] = useState(false); 
   const [selectedExtinguisherId, setSelectedExtinguisherId] = useState(null); 
+
   const fetchExtinguishers = async () => {
     try {
       const response = await fetch('http://localhost:4000/api/extinguishers');
@@ -25,11 +28,19 @@ export const Gerenciar = () => {
 
   const handleDeleteClick = (id) => {
     setSelectedExtinguisherId(id); 
-    setIsModalOpen(true); 
+    setIsDeleteModalOpen(true); 
   };
 
   const handleDelete = (id) => {
     setExtinguishers(extinguishers.filter(ext => ext.id !== id));
+  };
+
+  const handleAddClick = () => {
+    setIsAddModalOpen(true); 
+  };
+
+  const handleAdd = (newExtinguisher) => {
+    setExtinguishers([...extinguishers, newExtinguisher]); 
   };
 
   return (
@@ -40,7 +51,7 @@ export const Gerenciar = () => {
           <div className="title-gerenciamento">Gerenciamento de Extintores | Metrô SP</div>
         </div>
         <div className="bttn-div">
-          <button className="bttn-add-extinguisher">Adicionar Extintor</button>
+          <button className="bttn-add-extinguisher" onClick={handleAddClick}>Adicionar Extintor</button>
           <button className="bttn-remove-extinguisher" onClick={() => handleDeleteClick(selectedExtinguisherId)}>Remover Extintor</button>
         </div>
         <div className="title-extinguishers-display">Lista de Extintores</div>
@@ -65,9 +76,14 @@ export const Gerenciar = () => {
       </div>
       <Footer />
       <DeleteModal
-        isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
+        isOpen={isDeleteModalOpen}
+        onClose={() => setIsDeleteModalOpen(false)}
         onDelete={handleDelete}
+      />
+      <AddModal
+        isOpen={isAddModalOpen}
+        onClose={() => setIsAddModalOpen(false)}
+        onAdd={handleAdd} 
       />
     </div>
   );
