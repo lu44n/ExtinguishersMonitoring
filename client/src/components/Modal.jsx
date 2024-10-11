@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import QRCode from 'react-qr-code';
 import QRCodelink from 'qrcode';
+import { useLocation } from 'react-router-dom';
 import '../styles/Modal.css';
 
 export const Modal = ({ isOpen, onClose, data }) => {
   const [isEditing, setIsEditing] = useState(false);
   const [editData, setEditData] = useState(data);
+
+  const location = useLocation();
 
   useEffect(() => {
     if (isOpen) {
@@ -127,9 +130,11 @@ export const Modal = ({ isOpen, onClose, data }) => {
           )}
         </div>
         <div className="modal-actions">
-          <button onClick={() => setIsEditing(!isEditing)} className="edit-btn">
-            {isEditing ? 'Cancelar' : 'Editar'}
-          </button>
+          {location.pathname !== '/gerenciar' && (
+            <button onClick={() => setIsEditing(!isEditing)} className="edit-btn">
+                {isEditing ? 'Cancelar' : 'Editar'}
+            </button>
+          )}
           <button onClick={onClose} className="close-modal-bttn">Fechar</button>
         </div>
       </div>
