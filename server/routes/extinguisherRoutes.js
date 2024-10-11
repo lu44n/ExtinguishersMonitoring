@@ -13,7 +13,6 @@ const pool = new pg.Pool({
   database: process.env.DB_NAME
 });
 
-// Rota para buscar extintores específicos pelo ID
 router.get("/extinguisher/:id", async (req, res) => {
   try {
     const { id } = req.params;
@@ -31,7 +30,6 @@ router.get("/extinguisher/:id", async (req, res) => {
   }
 });
 
-// Rota para atualizar extintores pelo ID
 router.put("/extinguisher/:id", async (req, res) => {
   const { id } = req.params;
   const { tipo, capacidade, codigo_fabricante, data_fabricacao, data_validade, ultima_recarga, proxima_inspecao, status, localizacao } = req.body;
@@ -85,6 +83,40 @@ router.get("/extinguishers", async (req, res) => {
   } catch (error) {
     console.error('Erro ao buscar extintores:', error);
     res.status(500).json({ error: 'Erro ao buscar extintores' });
+  }
+});
+
+router.post("/extinguisher", async (req, res) => {
+  const { tipo, capacidade, codigo_fabricante, data_fabricacao, data_validade, ultima_recarga, proxima_inspecao, status, localizacao } = req.body;
+
+  try {
+    const result = await pool.query(
+      `INSERT INTO extintores (tipo, capacidade, codigo_fabricante, data_fabricacao, data_validade, ultima_recarga, proxima_inspecao, status, localizacao) 
+      VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING *`,
+      [tipo, capacidade, codigo_fabricante, data_fabricacao, data_validade, ultima_recarga, proxima_inspecao, status, localizacao]
+    );
+
+    res.status(201).json(result.rows[0]); 
+  } catch (error) {
+    console.error("Erro ao criar extintor:", error.message);
+    res.status(500).json({ message: "Erro no servidor" });
+  }
+});
+
+router.delete("/extinguisher/:id", async (req, res) => {
+  const { id } = req.params;
+
+  try {
+    const result = await pool.query("DELETE FROM extintores WHERE id = $1 RETURNING *", [id]);
+
+    if (result.rows.length === 0) {
+      return res.status(404).json({ message: "Extintor não encontrado" });
+    }
+
+    res.status(200).json(result.rows[0]); 
+  } catch (error) {
+    console.error("Erro ao deletar extintor:", error.message);
+    res.status(500).json({ message: "Erro no servidor" });
   }
 });
 

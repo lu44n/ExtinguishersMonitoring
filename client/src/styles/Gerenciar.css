@@ -14,3 +14,56 @@
     font-weight: 700;
     color: #003366;
 }
+
+.bttn-div {
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 35px;
+}
+
+.bttn-add-extinguisher, 
+.bttn-remove-extinguisher {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 220px;
+    height: 59px;
+    color: #fff;
+    border-radius: 50px;
+    font-size: 19px;
+    font-weight: 700;   
+    cursor: pointer;
+}
+
+.bttn-add-extinguisher:hover, 
+.bttn-remove-extinguisher:hover {
+    background: #EAEAEA;
+    color: #676767;
+}
+
+.bttn-add-extinguisher {
+    background: rgb(23, 136, 23);
+}
+
+.bttn-remove-extinguisher {
+    background: rgb(217, 42, 42);
+}
+
+.title-extinguishers-display {
+    text-align: center;
+    margin-top: 35px;
+    font-size: 24px;
+    font-weight: 700;
+    color: #003366;
+}
+
+.extinguishers-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 20px; 
+    max-width: 1110px; 
+    margin: 0 auto; 
+    padding-bottom: 80px;
+}
