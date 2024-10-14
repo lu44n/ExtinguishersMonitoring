@@ -143,3 +143,7 @@
 .save-btn:hover {
     transform: scale(1.05);
 }
+
+.edit-area input {
+    margin-bottom: 5px;
+}
