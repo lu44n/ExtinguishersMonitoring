@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFireExtinguisher } from '@fortawesome/free-solid-svg-icons';
 import { Navbar } from '../components/Navbar';
 import { Footer } from '../components/Footer';
+import extintor_icon from '../assets/extintor_icon_2.png';
 import '../styles/Home.css';
 
 export const Home = () => {
@@ -38,7 +37,7 @@ export const Home = () => {
       <Navbar />
       <div className="primary-div">
         <div className="title-container">
-          <div className="home-title"><FontAwesomeIcon icon={faFireExtinguisher} /> | Sistema de Gestão de Extintores de Incêndio - Metrô SP</div>
+          <div className="home-title"><img src={extintor_icon} alt=""/> | Sistema de Gestão de Extintores de Incêndio - Metrô SP</div>
         </div>
         <div className="desc-text-container">
           <div className="home-subtitle">Bem-vindo ao Sistema de Gestão de Extintores de Incêndio do Metrô de São Paulo!</div> 
