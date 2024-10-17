@@ -15,6 +15,4 @@ const port = process.env.PORT || 4000;
 app.use("/auth", authRoutes);
 app.use("/api", extinguisherRoutes)
 
-app.listen(port, () => {
-    console.log(`Server is running on http://localhost:${port}`);
-});
+module.exports = app;
