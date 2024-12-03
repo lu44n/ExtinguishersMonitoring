@@ -24,6 +24,12 @@
     margin-top: 30px;
 }
 
+.metrologo {
+  display: flex;
+  width: 70px;
+  height: 70px;
+} 
+
 .text {
     color: #003366;
     font-size: 48px;
@@ -96,7 +102,7 @@
     background-color: #003366;
     border-radius: 50px;
     font-size: 19px;
-    font-weight: 700;   
+    font-weight: 700;
     cursor: pointer;
 }
 
